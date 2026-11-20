@@ -1,0 +1,26 @@
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+    int *p;
+    int n=5;
+    p=malloc(n*sizeof(int));
+    if(p==NULL)
+    {
+        printf("memory allocation failed");
+        return 1;
+    }
+    for(int i=0;i<n;i++)
+    {
+        p[i]=(i+1)*10;
+    }
+    printf("array elements:\n");
+    for(int i=0;i<n;i++)
+    {
+        printf("%d\n",p[i]);
+    }
+    free(p);
+    p=NULL;
+    return 0;
+
+}
